@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "9a77e192-9dd3-4a6e-be88-ed14c1c3de4a",
+		"name": "IMX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5526761"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"wallet_address\": \"0xe9f803ca8e4febfef0590095f75e11905432cab5\",\n    \"eth_network\": \"ropsten\",\n    \"imx_token\": \"0x01cfb845a5f1558a04d8adc67b909df2b61af592a4f91b51f65fba179203d178\",\n    \"referral_code\": \"56a8a487\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send verification email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/send-verification-email?email=shivam1@moontek.io",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"send-verification-email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "shivam1@moontek.io"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZSI6IjM2NTI4NDhjLTczM2QtNDQ4NC1hNmU1LTVlZDg0OTkyOTMzYiIsImlhdCI6MTY1MzQ3MTkxNywiZXhwIjoxNjUzNTU4MzE3fQ.rKz06ZOt9yWcXwADOF_003r05jYL3EMD1iYmd-NNPgo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verificationToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZSI6IjIyMTY5MjdjLWE1M2QtNDMwMC04NzA0LWY3ZWYyM2MxZDNlNiIsImVtYWlsIjoic2hpdmFtMUBtb29udGVrLmlvIiwidG9rZW5fdHlwZSI6ImFjY291bnQtdmVyaWZpY2F0aW9uIiwiaWF0IjoxNjU0NzU5NTkyLCJleHAiOjE2NTQ4NDU5OTJ9.ROt18gb4qO67iuEu4BCGdE8zYF2ETSex_vuhTuo_tsY\",\n    \"otp\": \"392587\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verify-email",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discord",
+			"item": [
+				{
+					"name": "Link discord",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discordToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwOTY0NTc5NTYyMzk2MDU4NiIsImJvdCI6ZmFsc2UsInN5c3RlbSI6ZmFsc2UsImZsYWdzIjowLCJ1c2VybmFtZSI6IlNoaXZhbSIsImRpc2NyaW1pbmF0b3IiOiI1MjQ5IiwiYXZhdGFyIjpudWxsLCJjcmVhdGVkVGltZXN0YW1wIjoxNTg5MjYzMTQyMjU4LCJkZWZhdWx0QXZhdGFyVVJMIjoiaHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vZW1iZWQvYXZhdGFycy80LnBuZyIsInRhZyI6IlNoaXZhbSM1MjQ5IiwiYXZhdGFyVVJMIjpudWxsLCJkaXNwbGF5QXZhdGFyVVJMIjoiaHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vZW1iZWQvYXZhdGFycy80LnBuZyIsImlhdCI6MTY1MzQ2MDk5NiwiZXhwIjoxNjUzNTQ3Mzk2fQ.C9PUVFTyDvhJkI6nPACOVZMbUfXtIj3kX-ONowdaZTM\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/link-discord",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link-discord"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/get-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NFT",
+			"item": [
+				{
+					"name": "Redeem NFT",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/redeem-nft",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"redeem-nft"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
