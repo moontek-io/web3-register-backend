@@ -1,4 +1,4 @@
-# IMX Backend
+# Web3 Register Backend
 
 Backend Server for IMX project.
 
@@ -22,10 +22,10 @@ Install dependencies
 npm ci
 ```
 
-Copy the example environment variables
+Copy the template environment variables
 
 ```bash
-cp .env.example .env
+cp .env.template .env
 ```
 
 Optional: Run migrations & seed
@@ -73,6 +73,7 @@ You can import the endpoints to your local postman using the file ```/docs/IMX.p
 - After creating NFT contract, you get an address of the smart contract.
 - Set ETH_NETWORK, ETH_PROVIDER_URL, SMART_CONTRACT_ADDRESS, OWNER_PRIVATE_KEY, TOKEN_BLUE_PRINT in environment as defined in .env.example.
 - Mint NFT is started from tokenId 2 & incremented by 1 after each mint, so if you want to change please go to app_setting_master table and change setting_key 'token_id' to your custom number.
+- Minted NFT visible on [Ropsten Network](https://market.ropsten.immutable.com/) and [Ethereum Mainnet Network](https://market.immutable.com/)
 
 ### How to set reward point & redeem point using ```reward-config.js``` file.
 
